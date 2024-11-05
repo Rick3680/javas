@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button><a href="index.html"><h1 style="color: rgb(255, 0, 0);">VOLTAR</h1></a></button>
+
+    <section style="text-align: center;">
+
+    <h1>lista de compras</h1>
+    <input type="text" id="itemInput" placeholder="Digite um item">
+    <button id="addItemBtn">Adicionar</button>
+
+    <ul id="itemList" style="text-align: left;"></ul>
+    </section>
+
+
+    <script>
+        document.getElementById('addItemBtn').addEventListener('click', function() {
+        const inputValue = document.getElementById('itemInput').value;
+        if (inputValue.trim() !== '') {
+        const li = document.createElement('li');
+        li.textContent = inputValue;
+        document.getElementById('itemList').appendChild(li);
+        document.getElementById('itemInput').value = ''; // Limpa o input após adicionar
+        }
+        });
+    </script>
+
+</body>
+</html>
